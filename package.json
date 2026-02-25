@@ -1,0 +1,13 @@
+{
+  "name": "gmaps-auto-order",
+  "version": "1.0.0",
+  "description": "Auto-creates GMaps scrape orders for newly created campaigns",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "pg": "^8.11.0"
+  }
+}

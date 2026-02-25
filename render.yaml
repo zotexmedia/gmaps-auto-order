@@ -1,0 +1,16 @@
+services:
+  - type: cron
+    name: gmaps-auto-order
+    env: node
+    region: oregon
+    plan: free
+    schedule: "0 * * * *"  # Every hour
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: RECYCLING_DB_URL
+        sync: false
+      - key: GMAPS_DB_URL
+        sync: false
+      - key: DASHBOARD_URL
+        value: https://gmaps-dashboard-render.onrender.com
