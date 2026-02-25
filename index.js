@@ -106,12 +106,11 @@ async function run() {
   const gmaps = makePool(GMAPS_DB_URL, false);
 
   try {
-    // 1. Find all active GMaps campaigns in the recycling DB
+    // 1. Find all GMaps campaigns in the recycling DB
     const { rows: campaigns } = await recycling.query(`
       SELECT ic.id, ic.campaign_name
       FROM instant_campaigns ic
       WHERE ic.campaign_name ILIKE '%(GMaps)%'
-        AND ic.is_active = true
       ORDER BY ic.id ASC
     `);
 
